@@ -1,0 +1,274 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  font-family: 'Jost', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #60a9ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px 25px;
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#inputCity {
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 5px 0;
+  margin-bottom: 10px;
+  border-top: 1px solid #e1f1ff;
+}
+
+#inputState {
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 5px 0;
+  border-top: 1px solid #e1f1ff;
+}
+
+#searchButton {
+  border: 1px solid #9dd1ff;
+  border-radius: 10px;
+  color: #348efe;
+  display: inline-block;
+  padding: 15px 35px;
+  text-decoration: none;
+  margin: 25px 0;
+  transition: background-color 200ms ease-in-out;
+}
+
+#searchButton:hover {
+  background-color: #e1f1ff;
+  cursor: pointer;
+}
+
+.inputHeader {
+  font-size: 2vh;
+  padding-bottom: 4vh;
+}
+
+.weatherIcon {
+  margin-bottom: 25px;
+  max-width: 40%;
+}
+
+.temp {
+  font-size: 5vh;
+}
+
+.condition {
+  font-size: 2vh;
+}
+
+.city {
+  font-size: 2vh;
+  padding-top: 5vh;
+}
+
+#inputCity {
+  border: 2px solid #9dd1ff;
+  outline: none;
+  display: inline-block;
+  height: 34px;
+  vertical-align: middle;
+  position: relative;
+  bottom: 14px;
+  right: 9px;
+  border-radius: 22px;
+  width: 220px;
+  box-sizing: border-box;
+  padding: 0 18px;
+  transition: .3s;
+  font-family: 'Jost', sans-serif;
+  text-align: center;
+}
+
+#inputCity:focus {
+  border-color: dodgerblue;
+  box-shadow: 0 0 8px 0 dodgerblue;
+}
+
+#inputState {
+  border: 2px solid #9dd1ff;
+  outline: none;
+  display: inline-block;
+  height: 34px;
+  vertical-align: middle;
+  position: relative;
+  bottom: 14px;
+  right: 9px;
+  border-radius: 22px;
+  width: 120px;
+  box-sizing: border-box;
+  padding: 0 18px;
+  transition: .3s;
+  font-family: 'Jost', sans-serif;
+  text-align: center;
+}
+
+#inputState:focus {
+  border-color: dodgerblue;
+  box-shadow: 0 0 8px 0 dodgerblue;
+}
+
+@media (min-width: 900px) {
+  .container {
+    flex-direction: row;
+  }
+
+  #weatherResults {
+    border-left: 4px solid #e1f1ff;
+  }
+}

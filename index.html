@@ -8,14 +8,16 @@
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
   <script defer src="script.js"></script>
-  <title>Today's Weather</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet">
+  <title>Weather Widget</title>
 </head>
 
 <body>
   <div class="container weather-widget">
     <div id="weatherSearch">
-      <img src="/assets/smile.png" class="inputImage">
-      <h2 class="inputHeader">Search here!</h2>
+      <img src="/assets/smile.png" class="weatherIcon">
+      <h2 class="inputHeader">Enter your city and state!</h2>
       <ul class="inputBoxes">
         <li><input type="text" placeholder="City name" id="inputCity"></li>
         <li><input type="text" placeholder="State ex: Fl" id="inputState"></li>
