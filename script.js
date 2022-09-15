@@ -19,16 +19,30 @@ $searchBtn.click(function () {
         //replaces placeholder div with blank div
         $('#weatherResults').replaceWith('<div id="weatherResults"></div>');
 
-        // all lines below create new elements with api data
+        // converts temp data to celcius for late use (dependent on user choice)
+        let fToC = ((weatherInfo.main['temp'] - 32) * 5) / 9
+
+        // updates image based on weather condition
         let $img = $(`<img class="weatherIcon" src="/assets/${weatherInfo.weather[0].main}.png">`)
         $img.appendTo('#weatherResults');
 
-        let $temp = $(`<h1 class="temp">${weatherInfo.main['temp']}°F</h1>`);
-        $temp.appendTo('#weatherResults');
+        let $fBtn = $('#fDegrees');
+        let $cBtn = $('#cDegrees');
 
+        // checks value of radio buttons allowing user to choose temp unit
+        if ($cBtn[0].checked) {
+          let $temp = $(`<h1 class="temp">${Math.floor(fToC)}°C</h1>`);
+          $temp.appendTo('#weatherResults');
+        } else {
+          let $temp = $(`<h1 class="temp">${Math.floor(weatherInfo.main['temp'])}°F</h1>`);
+          $temp.appendTo('#weatherResults');
+        }
+
+        // updates condition of day
         let $condition = $(`<h1 class="condition">${weatherInfo.weather[0].description.toUpperCase()}</h1>`);
         $condition.appendTo('#weatherResults');
 
+        // displays city of weather condition
         let $city = $(`<h2 class="city">${weatherInfo.name.toUpperCase()}</h2>`);
         $city.appendTo('#weatherResults');
       });

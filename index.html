@@ -20,7 +20,7 @@
       <h2 class="inputHeader">Enter your city and state!</h2>
       <ul class="inputBoxes">
         <li><input type="text" placeholder="City name" id="inputCity"></li>
-        <li><input type="text" placeholder="State ex: Fl" id="inputState"></li>
+        <li><input type="text" placeholder="State (ex: FL)" id="inputState"></li>
       </ul>
       <button id="searchButton">See the Weather!</button>
     </div>
@@ -30,6 +30,17 @@
       <h1 class="condition">Condition</h1>
       <h2 class="City">City</h2>
     </div>
+    <div id="buttonContainer">
+      <div>
+        <div id="farenheit">
+          <label for="F">F°</label>
+          <input type="radio" name="tempUnit" value="F" id="fDegrees" checked="true">
+        </div>
+        <div id="celsius">
+          <label for="C">C°</label>
+          <input type="radio" name="tempUnit" value="C" id="cDegrees">
+        </div>
+      </div>
 </body>
 
 </html>

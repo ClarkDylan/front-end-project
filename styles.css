@@ -192,6 +192,9 @@ body {
 #searchButton:hover {
   background-color: #e1f1ff;
   cursor: pointer;
+  border-color: dodgerblue;
+  box-shadow: 0 0 8px 0 dodgerblue;
+  transition: border-color .3s ease-out;
 }
 
 .inputHeader {
@@ -213,7 +216,7 @@ body {
 }
 
 .city {
-  font-size: 2vh;
+  font-size: 3vh;
   padding-top: 5vh;
 }
 
@@ -261,6 +264,11 @@ body {
 #inputState:focus {
   border-color: dodgerblue;
   box-shadow: 0 0 8px 0 dodgerblue;
+}
+
+#buttonContainer {
+  width: 10%;
+  border-left: 4px solid #e1f1ff;
 }
 
 @media (min-width: 900px) {
