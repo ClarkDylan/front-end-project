@@ -220,6 +220,11 @@ body {
   padding-top: 5vh;
 }
 
+.forecastIcon {
+  margin-bottom: 10%;
+  max-width: 10%;
+}
+
 #inputCity {
   border: 2px solid #9dd1ff;
   outline: none;
