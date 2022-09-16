@@ -204,15 +204,15 @@ body {
 
 .weatherIcon {
   margin-bottom: 25px;
-  max-width: 40%;
+  max-width: 45%;
 }
 
 .temp {
-  font-size: 5vh;
+  font-size: 10vh;
 }
 
 .condition {
-  font-size: 2vh;
+  font-size: 5vh;
 }
 
 .city {
@@ -238,11 +238,12 @@ body {
 }
 
 .forecastTemp {
-  border: none;
+  border-bottom: 4px solid #e1f1ff;
 }
 
 .forecastCity {
-  border: none;
+  border-top: 4px solid #e1f1ff;
+  font-size: 6vh;
 }
 
 #inputCity {
@@ -304,4 +305,32 @@ body {
   #weatherResults {
     border-left: 4px solid #e1f1ff;
   }
+}
+
+#displaySelector {
+  border: 2px solid #9dd1ff;
+  outline: none;
+  display: inline-block;
+  height: 34px;
+  vertical-align: middle;
+  position: relative;
+  bottom: 14px;
+  right: 9px;
+  border-radius: 22px;
+  width: 120px;
+  box-sizing: border-box;
+  padding: 0 18px;
+  transition: .3s;
+  font-family: 'Jost', sans-serif;
+  text-align: center;
+  margin-top: 15px;
+}
+
+#displaySelector:focus {
+  border-color: dodgerblue;
+  box-shadow: 0 0 8px 0 dodgerblue;
+}
+
+#weatherSearch {
+  width: 40%;
 }
