@@ -22,13 +22,13 @@ $searchBtn.click(function () {
           //replaces placeholder div with blank div
           $('#weatherResults').replaceWith('<div id="weatherResults"></div>');
 
-          // converts temp data to celcius for late use (dependent on user choice)
-          let farToCel = ((weatherInfo.main['temp'] - 32) * 5) / 9
 
           // updates image based on weather condition
           let $img = $(`<img class="weatherIcon" src="/assets/${weatherInfo.weather[0].main}.png">`)
           $img.appendTo('#weatherResults');
 
+          // converts temp data to celcius for late use (dependent on user choice)
+          let farToCel = ((weatherInfo.main['temp'] - 32) * 5) / 9
           let $fBtn = $('#fDegrees');
           let $cBtn = $('#cDegrees');
 
@@ -42,7 +42,7 @@ $searchBtn.click(function () {
           }
 
           // updates condition of day
-          let $condition = $(`<h1 class="condition">${weatherInfo.weather[0].description.toUpperCase()}</h1>`);
+          let $condition = $(`<h1 class="condition">${weatherInfo.weather[0].description.toUpperCase()}!</h1>`);
           $condition.appendTo('#weatherResults');
 
           // displays city of weather condition
@@ -57,20 +57,68 @@ $searchBtn.click(function () {
             //replaces placeholder div with blank div
             $('#weatherResults').replaceWith('<div id="weatherResults"></div>');
 
-            let $dayOneImg = $(`<img class="forecastIcon" src="/assets/${forecast.list[0].weather[0].main}.png">`)
-            $dayOneImg.appendTo('#weatherResults');
 
-            let $dayTwoImg = $(`<img class="forecastIcon" src="/assets/${forecast.list[5].weather[0].main}.png">`)
-            $dayTwoImg.appendTo('#weatherResults');
+            // adds forecast icons
+            let $dayOneImg = $(`<img class="forecastIcon" src="/assets/${forecast.list[0].weather[0].main}.png">`);
+            let $dayOneDiv = $('<div class="imgDiv"></div>');
+            $dayOneDiv.appendTo('#weatherResults');
+            $dayOneImg.appendTo($dayOneDiv);
 
-            let $dayThreeImg = $(`<img class="forecastIcon" src="/assets/${forecast.list[13].weather[0].main}.png">`)
-            $dayThreeImg.appendTo('#weatherResults');
+            let $dayTwoImg = $(`<img class="forecastIcon" src="/assets/${forecast.list[5].weather[0].main}.png">`);
+            let $dayTwoDiv = $('<div class="imgDiv"></div>');
+            $dayTwoDiv.appendTo('#weatherResults');
+            $dayTwoImg.appendTo($dayTwoDiv);
 
-            let $dayFourImg = $(`<img class="forecastIcon" src="/assets/${forecast.list[21].weather[0].main}.png">`)
-            $dayFourImg.appendTo('#weatherResults');
+            let $dayThreeImg = $(`<img class="forecastIcon" src="/assets/${forecast.list[13].weather[0].main}.png">`);
+            let $dayThreeDiv = $('<div class="imgDiv"></div>');
+            $dayThreeDiv.appendTo('#weatherResults');
+            $dayThreeImg.appendTo($dayThreeDiv);
 
-            let $dayFiveImg = $(`<img class="forecastIcon" src="/assets/${forecast.list[29].weather[0].main}.png">`)
-            $dayFiveImg.appendTo('#weatherResults');
+            let $dayFourImg = $(`<img class="forecastIcon" src="/assets/${forecast.list[21].weather[0].main}.png">`);
+            let $dayFourDiv = $('<div class="imgDiv"></div>');
+            $dayFourDiv.appendTo('#weatherResults');
+            $dayFourImg.appendTo($dayFourDiv);
+
+            let $dayFiveImg = $(`<img class="forecastIcon" src="/assets/${forecast.list[29].weather[0].main}.png">`);
+            let $dayFiveDiv = $('<div class="imgDiv"></div>');
+            $dayFiveDiv.appendTo('#weatherResults');
+            $dayFiveImg.appendTo($dayFiveDiv);
+
+            // adds high low temp data
+            let $fBtn = $('#fDegrees');
+            let $cBtn = $('#cDegrees');
+
+            let avgHigh = (forecast.list[0].main.temp_max + forecast.list[5].main.temp_max + forecast.list[13].main.temp_max + forecast.list[21].main.temp_max + forecast.list[29].main.temp_max) / 5
+
+            let avgLow = (forecast.list[0].main.temp_min + forecast.list[5].main.temp_min + forecast.list[13].main.temp_min + forecast.list[21].main.temp_min + forecast.list[29].main.temp_min) / 5
+
+            if ($cBtn[0].checked) {
+              let $highLowTempAvg = $(`<h1 class="forecastTemp">Avg. High: ${Math.floor(Math.floor((avgHigh - 32) * 5 / 9))}°C | Avg. Low: ${Math.floor((avgLow - 32) * 5 / 9)}°C</h1>`);
+              $highLowTempAvg.prependTo('#weatherResults');
+            } else {
+              let $highLowTempAvg = $(`<h1 class="forecastTemp">Avg. High: ${Math.floor(forecast.list[0].main.temp_max)}°F | Avg. Low: ${Math.floor(forecast.list[0].main.temp_min)}°F</h1>`);
+              $highLowTempAvg.prependTo('#weatherResults');
+            }
+
+            // adds forecast conditions
+            let $dayOneCondition = $(`<h1 class="forecastCondition">Day One: ${forecast.list[0].weather[0].description.toUpperCase()}</h1>`)
+            $dayOneCondition.appendTo($dayOneDiv);
+
+            let $dayTwoCondition = $(`<h1 class="forecastCondition">Day Two: ${forecast.list[5].weather[0].description.toUpperCase()}</h1>`)
+            $dayTwoCondition.appendTo($dayTwoDiv);
+
+            let $dayThreeCondition = $(`<h1 class="forecastCondition">Day Three: ${forecast.list[13].weather[0].description.toUpperCase()}</h1>`)
+            $dayThreeCondition.appendTo($dayThreeDiv);
+
+            let $dayFourCondition = $(`<h1 class="forecastCondition">Day Four: ${forecast.list[21].weather[0].description.toUpperCase()}</h1>`)
+            $dayFourCondition.appendTo($dayFourDiv);
+
+            let $dayFiveCondition = $(`<h1 class="forecastCondition">Day Five: ${forecast.list[29].weather[0].description.toUpperCase()}</h1>`)
+            $dayFiveCondition.appendTo($dayFiveDiv);
+
+            // adds city
+            let $forecastCity = $(`<h2 class="forecastCity">${forecast.city.name.toUpperCase()}</h2>`)
+            $forecastCity.appendTo('#weatherResults');
 
           });
         }

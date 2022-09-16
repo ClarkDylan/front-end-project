@@ -221,8 +221,28 @@ body {
 }
 
 .forecastIcon {
-  margin-bottom: 10%;
+  margin-bottom: 5%;
   max-width: 10%;
+  display: block;
+  margin-right: 15px;
+}
+
+.forecastCondition {
+  display: inline;
+  margin-top: 15px;
+}
+
+.imgDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.forecastTemp {
+  border: none;
+}
+
+.forecastCity {
+  border: none;
 }
 
 #inputCity {
